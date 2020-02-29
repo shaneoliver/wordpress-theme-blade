@@ -1,0 +1,35 @@
+// Import custom variables
+@import "variables";
+
+/** Import Bootstrap */
+@import "~bootstrap/scss/bootstrap";
+
+@import 'global';
+@import 'wp-classes';
+@import 'comments';
+@import 'gallery';
+@import 'vendor/aos';
+@import 'vendor/woocommerce';
+@import 'vendor/hamburgers';
+
+
+.headroom {
+	position: fixed;
+	top: 0;
+	left: 0; 
+	right: 0;
+	will-change: transform;
+    transition: transform 200ms linear;
+    z-index: 1000;
+	
+	// Offset correctly if the admin bar is showing
+	.admin-bar & {
+		top: 32px;
+	}
+}
+.headroom--pinned {
+	transform: translateY(0%);
+}
+.headroom--unpinned {
+	transform: translateY(-100%);
+}
